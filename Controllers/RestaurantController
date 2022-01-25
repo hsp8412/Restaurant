@@ -1,0 +1,14 @@
+using Restaurant.Models;
+using Restaurant.Data;
+using Microsoft.AspNetCore.Mvc;
+
+namespace ContosoPizza.Controllers;
+
+[ApiController]
+[Route("[controller]")]
+public class RestaurantController : ControllerBase
+{
+    public RestaurantController()
+    {
+    }
+}
