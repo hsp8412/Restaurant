@@ -21,6 +21,6 @@ namespace Restaurant.Models
 
         [Required]
         public Order Order { get; set; }
-        
+
     }
 }

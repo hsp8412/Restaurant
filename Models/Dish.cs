@@ -14,12 +14,6 @@ namespace Restaurant.Models
         [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
 
-        public Dish(string name, decimal price)
-        {
-            Name = name;
-            Price = price;
-        }
-
     }
 }
 
