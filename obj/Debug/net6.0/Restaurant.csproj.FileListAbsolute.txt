@@ -33,3 +33,5 @@
 /Users/hesipeng/Desktop/Restaurant/obj/Debug/net6.0/ref/Restaurant.dll
 /Users/hesipeng/Desktop/Restaurant/obj/Debug/net6.0/Restaurant.pdb
 /Users/hesipeng/Desktop/Restaurant/obj/Debug/net6.0/Restaurant.genruntimeconfig.cache
+/Users/hesipeng/Desktop/Restaurant/bin/Debug/net6.0/AutoMapper.dll
+/Users/hesipeng/Desktop/Restaurant/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

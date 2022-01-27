@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ZmTkSlnsfXzu7W5atdbi/hWqZy24QnXT9ClkYWVWtcvTVEA2WSwLuBxZ8K8lbs3OPjEhsIxn+am3tmsjn17Vug==",
+  "dgSpecHash": "fHj8UZZi5vfzMDqBFoPppENWXuQoZ9ZFTuF7yasn4+g5WuhZu6EPHCLkVV+eOtGcie1VRZAnF8Vu3qSnhJxgAg==",
   "success": true,
   "projectFilePath": "/Users/hesipeng/Desktop/Restaurant/Restaurant.csproj",
   "expectedPackageFiles": [
+    "/Users/hesipeng/.nuget/packages/automapper/11.0.0/automapper.11.0.0.nupkg.sha512",
+    "/Users/hesipeng/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/11.0.0/automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "/Users/hesipeng/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/Users/hesipeng/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/hesipeng/.nuget/packages/microsoft.entityframeworkcore/6.0.1/microsoft.entityframeworkcore.6.0.1.nupkg.sha512",
     "/Users/hesipeng/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.1/microsoft.entityframeworkcore.abstractions.6.0.1.nupkg.sha512",
     "/Users/hesipeng/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.1/microsoft.entityframeworkcore.analyzers.6.0.1.nupkg.sha512",
