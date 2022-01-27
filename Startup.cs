@@ -32,7 +32,7 @@ namespace Restaurant
 
             services.AddControllers();
 
-            services.AddScoped<IRestaurantRepo, RestaurantRepo>();
+            services.AddScoped<IRestaurantRepo, MySqlRestaurantRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
