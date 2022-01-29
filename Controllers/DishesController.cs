@@ -27,7 +27,7 @@ namespace Restaurant.Controllers
             return Ok(_mapper.Map<IEnumerable<DishReadDto>>(dishes));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetDishById")]
         public ActionResult<DishReadDto> GetDishById(int id)
         {
             var dish = _repository.GetDishByID(id);
@@ -36,6 +36,18 @@ namespace Restaurant.Controllers
                 return Ok(_mapper.Map<DishReadDto>(dish));
             }
             return NotFound();
+        }
+
+        [HttpPost]
+        public ActionResult<DishReadDto> CreateDish(DishCreateDto dishCreateDto)
+        {
+            var dish = _mapper.Map<Dish>(dishCreateDto);
+            _repository.CreateDish(dish);
+            _repository.SaveChanges();
+
+            var dishReadDto = _mapper.Map<DishReadDto>(dish);
+
+            return CreatedAtRoute(nameof(GetDishById), new { Id = dishReadDto.Id }, dishReadDto);
         }
     }
 }

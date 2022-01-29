@@ -4,6 +4,11 @@ namespace Restaurant.Data
 {
     public class RestaurantRepo : IRestaurantRepo
     {
+        public void CreateDish(Dish dish)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Dish> GetAllDishes()
         {
             var dishes = new List<Dish>
@@ -17,6 +22,11 @@ namespace Restaurant.Data
         public Dish GetDishByID(int id)
         {
             return new Dish { Id = 2, Name = "Cake", Price = 13M };
+        }
+
+        public bool SaveChanges()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -10,6 +10,17 @@ namespace Restaurant.Data
         {
             _context = context;
         }
+
+        public void CreateDish(Dish dish)
+        {
+            if (dish == null)
+            {
+                throw new ArgumentNullException(nameof(dish));
+            }
+
+            _context.Dishes.Add(dish);
+        }
+
         public IEnumerable<Dish> GetAllDishes()
         {
             return _context.Dishes.ToList();
@@ -18,6 +29,11 @@ namespace Restaurant.Data
         public Dish GetDishByID(int id)
         {
             return _context.Dishes.FirstOrDefault(d => d.Id == id);
+        }
+
+        public bool SaveChanges()
+        {
+            return (_context.SaveChanges() >= 0);
         }
     }
 }

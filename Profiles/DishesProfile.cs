@@ -9,6 +9,7 @@ namespace Restaurant.Profiles
         public DishesProfile()
         {
             CreateMap<Dish, DishReadDto>();
+            CreateMap<DishCreateDto, Dish>();
         }
     }
 }
