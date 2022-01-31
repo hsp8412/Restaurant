@@ -9,6 +9,11 @@ namespace Restaurant.Data
             throw new NotImplementedException();
         }
 
+        public void DeleteDish(Dish dish)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Dish> GetAllDishes()
         {
             var dishes = new List<Dish>
@@ -25,6 +30,11 @@ namespace Restaurant.Data
         }
 
         public bool SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateDish(Dish dish)
         {
             throw new NotImplementedException();
         }

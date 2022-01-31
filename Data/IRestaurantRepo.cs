@@ -11,5 +11,11 @@ namespace Restaurant.Data
 
         void CreateDish(Dish dish);
 
+        void UpdateDish(Dish dish);
+
+        void DeleteDish(Dish dish);
+
+
+
     }
 }

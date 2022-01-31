@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Serialization;
 
 using Restaurant.Data;
 
@@ -30,7 +31,7 @@ namespace Restaurant
         {
             services.AddDbContext<RestaurantContext>(opt => opt.UseMySql(Configuration.GetConnectionString("RestaurantConnection"), new MySqlServerVersion(new Version(8, 0, 27))));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(s => s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver());
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

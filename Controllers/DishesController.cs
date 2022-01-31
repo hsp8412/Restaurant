@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Restaurant.Data;
 using Restaurant.Dtos;
@@ -48,6 +49,64 @@ namespace Restaurant.Controllers
             var dishReadDto = _mapper.Map<DishReadDto>(dish);
 
             return CreatedAtRoute(nameof(GetDishById), new { Id = dishReadDto.Id }, dishReadDto);
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult UpdateDish(int id, DishUpdateDto dishUpdateDto)
+        {
+            var dishFromRepo = _repository.GetDishByID(id);
+            if (dishFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            _mapper.Map(dishUpdateDto, dishFromRepo);
+
+            _repository.UpdateDish(dishFromRepo);
+
+            _repository.SaveChanges();
+
+            return NoContent();
+
+        }
+
+        [HttpPatch("{id}")]
+        public ActionResult PartialDishUpdate(int id, JsonPatchDocument<DishUpdateDto> patchDoc)
+        {
+            var dishFromRepo = _repository.GetDishByID(id);
+            if (dishFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            var dishToPatch = _mapper.Map<DishUpdateDto>(dishFromRepo);
+            patchDoc.ApplyTo(dishToPatch, ModelState);
+            if (!TryValidateModel(dishToPatch))
+            {
+                return ValidationProblem(ModelState);
+            }
+            _mapper.Map(dishToPatch, dishFromRepo);
+
+            _repository.UpdateDish(dishFromRepo);
+
+            _repository.SaveChanges();
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+
+        public ActionResult DeleteDish(int id)
+        {
+            var dishFromRepo = _repository.GetDishByID(id);
+            if (dishFromRepo == null)
+            {
+                return NotFound();
+            }
+
+            _repository.DeleteDish(dishFromRepo);
+            _repository.SaveChanges();
+            return NoContent();
         }
     }
 }

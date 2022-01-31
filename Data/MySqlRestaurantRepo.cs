@@ -21,6 +21,16 @@ namespace Restaurant.Data
             _context.Dishes.Add(dish);
         }
 
+        public void DeleteDish(Dish dish)
+        {
+            if (dish == null)
+            {
+                throw new ArgumentNullException(nameof(dish));
+            }
+
+            _context.Dishes.Remove(dish);
+        }
+
         public IEnumerable<Dish> GetAllDishes()
         {
             return _context.Dishes.ToList();
@@ -34,6 +44,11 @@ namespace Restaurant.Data
         public bool SaveChanges()
         {
             return (_context.SaveChanges() >= 0);
+        }
+
+        public void UpdateDish(Dish dish)
+        {
+            //Nothing here
         }
     }
 }
